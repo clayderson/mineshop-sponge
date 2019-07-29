@@ -1,0 +1,26 @@
+plugins {
+    id 'org.spongepowered.plugin' version '0.8.1'
+}
+
+group = pluginGroup
+version = pluginVersion
+
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+
+dependencies {
+    implementation 'org.spongepowered:spongeapi:7.0.0'
+    compile files(fileTree(dir: 'libs', include: ['*.jar']))
+}
+
+sponge.plugin.id = pluginId
+
+jar {
+    manifest {
+        attributes "Main-Class": "br.com.mineshop.plugin.sponge.Main"
+    }
+
+    from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}

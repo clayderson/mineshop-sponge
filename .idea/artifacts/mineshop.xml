@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="mineshop">
+    <output-path>$PROJECT_DIR$/../../../servers/vanilla/mods</output-path>
+    <root id="archive" name="mineshop.jar">
+      <element id="module-output" name="mineshop.main" />
+    </root>
+  </artifact>
+</component>
